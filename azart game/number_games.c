@@ -127,5 +127,84 @@ void show_highscore() {
 	while (read(fd, &entry , sizeof (struct user)) > 0  ) 
 	{
 		//condition
+		if (entry.highscore > top_score) {
+
+			top_score = entry.highscore;
+			strcpy(top_name, entry.name);
+		}
 	}
+	close(fd);
+	if(top_score > player.highscore){
+		printf(" %s new  record: %u\n",top_name , top_score );
+	}
+	else {
+		printf("%s Now you  have %u\n", player.highscore );
+	}
+	printf("==========================================================================\n\n\n", );
+}
+
+//strandart jackpot
+void jackpot() {}
+
+// jackot with  bonus
+void jackpot_plus() {}
+
+
+// function  for input of name , because scanf  is stopping after first scpace 
+void input_name(){
+
+   char *name_ptr , input_char='\n';
+   while(input_char == '\n'){
+   	scanf("%c" , &input_char);
+   }
+
+   name_ptr = (char*)&(player.name);
+   while(input_char != '\n'){
+   	*name_ptr = input_char;
+   	scanf("%c" , &input_char);
+   	name_ptr++;
+   }
+   name_ptr = 0;
+
+}
+
+
+//this function contains , it allows  to  play game  again
+void play_the_game() {
+
+  int play_again = 1;
+  int (*game) ();
+  char selection;
+
+
+  while(play_again) {
+
+  	printf("\n DEBUGGING PTG#1\n", player.current_game);
+  	if (player.current_game() != -1){
+
+         if (player.credits > player.highscore) {
+         	player.highscore = player.credits;
+         }
+         printf("\n Now you have %u credits:\n" , player.credits);
+
+         update_player_data();
+         printf("Do you wanna play again? (y/n)\n");
+
+         selection = '\n';
+
+         while(selection == '\n'){
+         	scanf("%c" , &selection);
+         }
+         if (selection == 'n'){
+         	play_again = 0;
+         } 
+         else {
+         	play_again = 0;
+         }
+
+  	}
+  }
+
+//game pick a number 
+
 }
