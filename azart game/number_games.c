@@ -207,4 +207,44 @@ void play_the_game() {
 
 //game pick a number 
 
+
+}
+
+//game pick a number 
+void pick_a_number() {
+
+	int pick , winning_number;
+
+	 printf("This game is guess a number!\n");
+	 winning_number = (rand() % 20) + 1 ; // choose a number from 1 to 20
+	 if (player.credits < 10) {
+	 	printf("Sorry , you have %d credits ,  you can not  play\n",player.credits );
+	 	return -1;
+	 }
+	 if (player.credits == 25) {
+	 	printf(" oh  today is good day\n");
+	 	player.credits += 5555;
+	 	printf("credits were added !\n");
+	 	printf("Enter a number from 1 to 20.\n");
+	 	scanf("%d" , &pick);
+	 	printf("winning number:: %d\n", winning_number);
+	 	if (pick == winning_number) {
+	 		jackpot_plus();
+	 	}
+	 	else {
+	 		printf("Sorry you losed!\n");
+	 	}
+	 }
+
+	 	
+	 	printf("Enter a number from 1 to 20.\n");
+	 	scanf("%d" , &pick);
+	 	printf("winning number:: %d\n", winning_number);
+	 	if (pick == winning_number) {
+	 		jackpot();
+	 	}
+	 	else {
+	 		printf("Sorry you losed!\n");
+	 	}
+
 }
