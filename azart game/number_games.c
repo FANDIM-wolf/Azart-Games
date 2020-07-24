@@ -144,10 +144,21 @@ void show_highscore() {
 }
 
 //strandart jackpot
-void jackpot() {}
+void jackpot() {
+
+   printf("*+*___________JACKPOT__________*+*\n");
+   printf("You got a jackpot : 100\n");
+   player.credits +=100;
+
+}
 
 // jackot with  bonus
-void jackpot_plus() {}
+void jackpot_plus() {
+
+   printf("*+*___________JACKPOT_PLUS__________*+*\n");
+   printf("You got a jackpot plus : 1100\n");
+   player.credits +=1100;
+}
 
 
 // function  for input of name , because scanf  is stopping after first scpace 
@@ -247,4 +258,62 @@ void pick_a_number() {
 	 		printf("Sorry you losed!\n");
 	 	}
 
+}
+
+int main()
+{
+	int choice , last_game;
+
+	srand(time(0)); // send current time to generator
+
+	if(get_player_data() == -1){
+		register_new_player();
+	}
+
+	while(choice !=5) {
+       
+       printf("====Menu====\n");
+       printf("1-Guess a number\n");
+       printf("2-Record\n");
+       printf("3-Change user\n");
+       printf("4-Go back to 100\n");
+       printf("5-Exit\n", );
+
+	
+
+	if((choice < 1) || (choice > 7)) {
+
+		printf("Something wrong , write down 1-5 number :)\n");
+	}
+    else if (choice < 2) {
+    	if (choice != last_game){
+
+    		if(choice == 1) {
+    			player.current_game = pick_a_number;
+    		}
+    		
+    	}
+    	play_the_game();
+    }
+
+    else if (choice == 2) {
+    	show_highscore();
+    } 
+    else if (choice == 3) {
+    	printf("Another user\n");
+    	printf("Enter new name:\n");
+    	input_name();
+    	printf("Name is changed.\n");
+    }
+    else if (choice == 4){
+
+    	printf("Go back to  100 credits\n");
+    	player.credits = 100;
+    }
+
+
+    }
+
+    update_player_data();
+	return 0;
 }
