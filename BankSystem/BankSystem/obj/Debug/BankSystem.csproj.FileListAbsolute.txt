@@ -1,0 +1,10 @@
+C:\Users\USER\source\repos\BankSystem\BankSystem\bin\Debug\BankSystem.exe.config
+C:\Users\USER\source\repos\BankSystem\BankSystem\bin\Debug\BankSystem.exe
+C:\Users\USER\source\repos\BankSystem\BankSystem\bin\Debug\BankSystem.pdb
+C:\Users\USER\source\repos\BankSystem\BankSystem\obj\Debug\BankSystem.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\BankSystem\BankSystem\obj\Debug\BankSystem.Form1.resources
+C:\Users\USER\source\repos\BankSystem\BankSystem\obj\Debug\BankSystem.Form2.resources
+C:\Users\USER\source\repos\BankSystem\BankSystem\obj\Debug\BankSystem.Properties.Resources.resources
+C:\Users\USER\source\repos\BankSystem\BankSystem\obj\Debug\BankSystem.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\BankSystem\BankSystem\obj\Debug\BankSystem.exe
+C:\Users\USER\source\repos\BankSystem\BankSystem\obj\Debug\BankSystem.pdb
